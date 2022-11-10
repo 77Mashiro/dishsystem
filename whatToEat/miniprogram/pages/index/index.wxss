@@ -1,0 +1,23 @@
+/**index.wxss**/
+
+page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+}
+
+.title {
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  font-size: 44rpx;
+  margin-bottom: 40rpx;
+}
+
+
+
+.environment {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 50rpx;
+  margin-top: 25%;
+}

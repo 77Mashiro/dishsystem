@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="title">今天吃什么</view>
+  
+  <image src="miniprogram\images\4.jpg" />
+
+  <view class="environment" bindtap="onChangeShowEnvChoose">菜品名 {{ selectedEnv.alias }}</view>
+
+</view>
