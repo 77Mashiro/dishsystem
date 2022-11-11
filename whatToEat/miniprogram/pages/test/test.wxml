@@ -1,14 +1,9 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+
 <view>
-	<text>标签2</text>
+	<text>菜品图片</text>
 </view>
-<view>
-	<text>标签1</text>
-</view>
-<view>
-	<text>标签3</text>
-</view>
+
 
 <image src="{{imgData2}}">
 </image>
