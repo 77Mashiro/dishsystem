@@ -1,21 +1,33 @@
-// pages/logs/logs.js
+// pages/shujuku/shujukutiaoshi.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    i:''
   },
-
- 
+  getdata: function(){
+    const db = wx.cloud.database()
+    db.collection("table").get().then(res=>{
+      console.log(res);
+      this.setData({ i:res.data[0].tablename })
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    const db = wx.cloud.database()
+    const user = db.collection('user')
+    /*db.collection('user').add({
+      data:{
 
+      }
+    })*/
   },
+ 
 
   /**
    * 生命周期函数--监听页面初次渲染完成

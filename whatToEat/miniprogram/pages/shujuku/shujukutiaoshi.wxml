@@ -1,0 +1,4 @@
+<!--pages/shujuku/shujukutiaoshi.wxml-->
+<text>pages/shujuku/shujukutiaoshi.wxml</text>
+<button bindtap="getdata">显示</button>
+<text>{{i}}</text>

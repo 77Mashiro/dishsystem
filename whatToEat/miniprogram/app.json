@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/logs/logs",
     "pages/index/index",
-    "pages/test/test"
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/shujuku/shujukutiaoshi"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -12,8 +13,35 @@
     "navigationBarTextStyle": "black"
   },
 
-   
+  "tabBar": {
+    "color": "#999",
+        "selectedColor": "#3D98FF",
+        "backgroundColor": "#fff",
+        "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/tab1.png",
+        "iconPath": "images/tab.png",
+        "pagePath": "pages/logs/logs",
+        "text": "标签"
+      },
+      {
+        "selectedIconPath": "images/like1.png",
+        "iconPath": "images/like.png",
+        "pagePath": "pages/index/index",
+        "text": "吃啥"
+      },
+      {
+        "selectedIconPath": "images/home1.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/test/test",
+        "text": "主页"
+      }
+    ]
+  },
 
+
+  
 
   "sitemapLocation": "sitemap.json",
   "style": "v2"

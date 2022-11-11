@@ -1,6 +1,14 @@
 <!--pages/logs/logs.wxml-->
 <text>pages/logs/logs.wxml</text>
-<image src="/images/4.jpg" mode=""/>
-<button bindtap="a" size="mini" type="primary">跳转至test</button>
-<button bindtap="b" size="mini" type="primary">跳转至index</button>
+
+<view>
+	<text>标签2</text>
+</view>
+<view>
+	<text>标签1</text>
+</view>
+<view>
+	<text>标签3</text>
+</view>
+
 
