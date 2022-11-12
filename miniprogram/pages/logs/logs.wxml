@@ -1,0 +1,50 @@
+<!--pages/logs/logs.wxml-->
+<view class="ba1"> <!-- 第一个大盒子 -->
+ <view> 
+<view class="b1" style="position: relative; left: 20rpx; top: 26rpx"><!-- 标签类中盒子中有四个 -->
+  <text>性别</text>
+</view>
+<view class="b1" style="width: 170rpx; height: 120rpx; display: block; box-sizing: border-box; position: relative; left: 20rpx; top: 58rpx">
+  <text>饭量</text>
+</view>
+<view class="b1" style="width: 170rpx; height: 100rpx; display: block; box-sizing: border-box; position: relative; left: 30rpx; top: 82rpx">
+  <text style="position: relative; left: 0rpx; top: -16rpx">偏好</text>
+</view>
+<view class="b1" style="width: 191rpx; height: 124rpx; display: block; box-sizing: border-box; position: relative; left: 10rpx; top: 98rpx">
+  <text>忌口</text>
+</view>
+ </view>
+  <view class="b2" style="width: 394rpx; height: 870rpx; display: block; box-sizing: border-box"><!-- 填入数据中盒子中有四个 -->
+  <!-- 组件选择器1 -->
+  <view class="section" style="width: 248rpx; height: 92rpx; display: block; box-sizing: border-box; position: relative; left: -36rpx; top: 15rpx"> 
+  <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+    <view class="picker" style="position: relative; left: -72rpx; top: 0rpx"> ：{{array1[index1]}}</view>
+  </picker>
+</view>
+<!-- 组件选择器1 -->
+  <!-- 组件选择器2 -->
+  <view class="section" style="position: relative; left: -25rpx; top: 70rpx; width: 244rpx; height: 130rpx; display: block; box-sizing: border-box"> 
+  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+    <view class="picker" style="position: relative; left: -82rpx; top: 26rpx"> ：{{array2[index2]}}</view>
+  </picker>
+</view>
+<!-- 组件选择器2 -->
+  <!-- 组件选择器3 -->
+  <view class="section" style="width: 225rpx; height: 138rpx; display: block; box-sizing: border-box; position: relative; left: -36rpx; top: 108rpx"> 
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker" style="position: relative; left: -74rpx; top: 0rpx"> ：{{array[index]}}</view>
+  </picker>
+</view>
+<!-- 组件选择器3 -->
+  <!-- 组件选择器4 -->
+  <view class="section" style="position: relative; left: -36rpx; top: 132rpx; width: 225rpx; height: 110rpx; display: block; box-sizing: border-box"> 
+  <picker bindchange="bindPickerChange3" value="{{index3}}" range="{{array3}}">
+    <view class="picker" style="position: relative; left: -70rpx; top: 0rpx"> ：{{array3[index3]}}</view>
+  </picker>
+</view>
+<!-- 组件选择器4 -->
+  </view>
+</view>
+<button style="position: relative; left: -26rpx; top: 98rpx" bindtap="upstore">确认</button>
+
+

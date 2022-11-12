@@ -1,0 +1,24 @@
+<view class="container">
+  <image src="../../images/background_images.jpg" class="down background"></image>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view class="up">
+ <image src="{{photo_address}}" class="tupian"/>
+  </view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+      {{food_name}}
+  </view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+   ￥ {{food_price}}
+  </view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+   {{address}}
+  </view>
+</view>

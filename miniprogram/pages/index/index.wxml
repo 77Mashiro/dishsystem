@@ -1,0 +1,24 @@
+<view class="container">
+  <image mode="widthFix" src="cloud://cloud1-0g6ojs2ja6ce371a.636c-cloud1-0g6ojs2ja6ce371a-1314916374/background_images.jpg" class="down background"></image>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view class="up">
+ <image mode="widthFix" src="{{photo_address}}" class="tupian"/>
+  </view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+      {{food_name}}
+  </view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+   ￥ {{food_price}}
+  </view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+   {{address}}
+  </view>
+</view>

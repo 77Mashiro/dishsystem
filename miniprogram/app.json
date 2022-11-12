@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/getInfor/getInfor",
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/test1/test1",
+    "pages/shujuku/shujukutiaoshi",
+    "pages/display/display"
+    
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "健康吃饭",
+    "navigationBarTextStyle": "black"
+  },
+
+  "tabBar": {
+    "color": "#999",
+        "selectedColor": "#3D98FF",
+        "backgroundColor": "#fff",
+        "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/tab1.png",
+        "iconPath": "images/tab.png",
+        "pagePath": "pages/logs/logs",
+        "text": "标签"
+      },
+      {
+        "selectedIconPath": "images/like1.png",
+        "iconPath": "images/like.png",
+        "pagePath": "pages/index/index",
+        "text": "吃啥"
+      },
+      {
+        "selectedIconPath": "images/home1.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/test1/test1",
+        "text": "贴士"
+      }
+    ]
+  },
+
+
+  
+
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

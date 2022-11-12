@@ -1,0 +1,30 @@
+/* pages/logs/logs.wxss */
+page{
+  background-color:pink;
+}
+.b1{
+  background-color: white;
+  color: cornflowerblue;
+  font-weight: bolder;
+  font-size: 40rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  padding: 30rpx;
+  margin: 60rpx 100rpx 60rpx 100rpx;
+  border: 10rpx solid lightcoral;
+}
+.ba1{
+  display: flex;
+  flex-direction: row;
+}
+.section{
+  background-color: white;
+  color: cornflowerblue;
+  font-weight: bolder;
+  font-size: 40rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  padding: 30rpx;
+  margin: 60rpx 100rpx 60rpx 100rpx;
+  border: 10rpx solid lightcoral;
+}
