@@ -1,0 +1,27 @@
+<view class="container">
+  <image src="cloud://cloud1-0g6ojs2ja6ce371a.636c-cloud1-0g6ojs2ja6ce371a-1314916374/weather_background.jpg" class="down background"></image>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view class="up ziti1">
+   {{time}}
+  </view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+  季节饮食指南：{{tips}}
+  </view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+   {{weather_now.text}}
+  </view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view class="up ziti">
+   {{weather_now.temp}}℃
+  </view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+  <view >whatToEat</view>
+</view>
+

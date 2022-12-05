@@ -1,13 +1,2 @@
 <!--pages/test/test.wxml-->
-
-<view>
-	<text>菜品图片</text>
-</view>
-
-
-<image src="{{imgData2}}">
-</image>
-
-
-
-
+<text>pages/test/test.wxml</text>

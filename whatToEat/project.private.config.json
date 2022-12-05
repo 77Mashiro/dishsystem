@@ -65,6 +65,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/display/display",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

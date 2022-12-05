@@ -1,23 +1,39 @@
-/**index.wxss**/
+.container{
+    width: 100%;
+    height: 844rpx;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  .background{
+    position :absolute;
+    width: 100%;
+    height: 800px;
+  }
+  
+  .up{
+    
+    z-index: 1;
+  }
+  
+  .ziti{
+    font-size: 49px;
+    font-weight:600;
+    font-family:'楷体';
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+     /* -webkit-text-stroke: 1px rgb(0, 0, 0);  */
+  }
+  
+  .tupian{
+    width: 400rpx;
+    height: 400rpx;
+    border-radius: 30px;
+  }
 
-page {
-  padding-top: 54rpx;
-  background-color: #f6f6f6;
-  padding-bottom: 60rpx;
-}
-
-.title {
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: #000000;
-  font-size: 44rpx;
-  margin-bottom: 40rpx;
-}
-
-
-
-.environment {
-  color: rgba(0, 0, 0, 0.4);
-  font-size: 50rpx;
-  margin-top: 25%;
+	.btn{
+    background-color: rgb(255, 210, 21);
+    color: rgb(0, 0, 0);
 }

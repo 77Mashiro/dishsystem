@@ -1,8 +1,4 @@
-/* pages/logs/logs.wxss */
-page{
-  background-color:pink;
-}
-
+/* pages/pa1/yemian1.wxss */
 .b1{
   background-color: white;
   color: cornflowerblue;
@@ -33,7 +29,7 @@ page{
   width: 200rpx;
   height: 70rpx;
   color: #6699FF;
-  border: 3rpx solid #6699ff;
+  border: 3rpx solid #6699FF;
   border-radius: 80rpx;
   font-size: 35rpx;
   margin-top: 40rpx;
@@ -43,5 +39,5 @@ page{
   }
   .bot11{
     top: 3rpx;
-  background-color: lightyellow;
+  background-color: lightpink;
   }

@@ -1,142 +1,137 @@
 // index.js
 // const app = getApp()
 const { envList } = require('../../envList.js');
-
+const db = wx.cloud.database()
 Page({
   data: {
+    i:false,
+    fatnumber:1,
+    proteinnumber:1,
+    chonumber:1,
+    pricenumber:50,
+    photo_address:"",
+    food_name:"",
+    food_price:"",
+    address:"",
     showUploadTip: false,
-    powerList: [{
-      title: '云函数',
-      tip: '安全、免鉴权运行业务代码',
-      showItem: false,
-      item: [{
-        title: '获取OpenId',
-        page: 'getOpenId'
-      },
-      //  {
-      //   title: '微信支付'
-      // },
-       {
-        title: '生成小程序码',
-        page: 'getMiniProgramCode'
-      },
-      // {
-      //   title: '发送订阅消息',
-      // }
-    ]
-    }, {
-      title: '数据库',
-      tip: '安全稳定的文档型数据库',
-      showItem: false,
-      item: [{
-        title: '创建集合',
-        page: 'createCollection'
-      }, {
-        title: '更新记录',
-        page: 'updateRecord'
-      }, {
-        title: '查询记录',
-        page: 'selectRecord'
-      }, {
-        title: '聚合操作',
-        page: 'sumRecord'
-      }]
-    }, {
-      title: '云存储',
-      tip: '自带CDN加速文件存储',
-      showItem: false,
-      item: [{
-        title: '上传文件',
-        page: 'uploadFile'
-      }]
-    }, {
-      title: '云托管',
-      tip: '不限语言的全托管容器服务',
-      showItem: false,
-      item: [{
-        title: '部署服务',
-        page: 'deployService'
-      }]
-    }],
     envList,
     selectedEnv: envList[0],
     haveCreateCollection: false
   },
 
-  onClickPowerInfo(e) {
-    const index = e.currentTarget.dataset.index;
-    const powerList = this.data.powerList;
-    powerList[index].showItem = !powerList[index].showItem;
-    if (powerList[index].title === '数据库' && !this.data.haveCreateCollection) {
-      this.onClickDatabase(powerList);
-    } else {
-      this.setData({
-        powerList
-      });
+  onShow(){
+    var that = this
+    wx.getStorage({
+      key:'sex',
+      success(res){
+        console.log(res)
+        if(res)
+        {
+          that.setData({
+            usersex:res.data,
+          })
+      }
+      }
+    })
+    
+
+    wx.getStorage({
+      key:'fanliang',
+      success(res){
+        console.log(res)
+        if(res)
+        {
+          that.setData({
+            userfanliang:res.data
+          })
+      }
+      }
+    })
+    
+    wx.getStorage({
+      key:'like',
+      success(res){
+        console.log(res)
+        if(res)
+        {
+          that.setData({
+            userlike:res.data
+          })
+      }
+      }
+    })
+  
+    wx.getStorage({
+      key:'unlike',
+      success(res){
+        console.log(res)
+        if(res)
+        {
+          that.setData({
+            userunlike:res.data
+          })
+      }
+      }
+    })
+    
+  },
+  get:function () {
+    var that = this;
+    that.setData({
+      i:true
+    });
+    console.log("转换");
+    if(that.data.usersex=="男"){
+      that.setData({
+        chonumber:1
+      })
+    }else if(that.data.usersex=="女"){
+      that.setData({
+        chonumber:0.8
+      })
     }
-  },
-
-  onChangeShowEnvChoose() {
-    wx.showActionSheet({
-      itemList: this.data.envList.map(i => i.alias),
-      success: (res) => {
-        this.onChangeSelectedEnv(res.tapIndex);
-      },
-      fail (res) {
-        console.log(res.errMsg);
-      }
-    });
-  },
-
-  onChangeSelectedEnv(index) {
-    if (this.data.selectedEnv.envId === this.data.envList[index].envId) {
-      return;
+    if(that.data.userfanliang=="大"){
+      that.setData({
+        chonumber:that.data.chonumber*1.2
+      })
     }
-    const powerList = this.data.powerList;
-    powerList.forEach(i => {
-      i.showItem = false;
-    });
-    this.setData({
-      selectedEnv: this.data.envList[index],
-      powerList,
-      haveCreateCollection: false
-    });
-  },
+    if(that.data.userlike=="减肥"){
+      that.setData({
+        fatnumber:0.5
+      })
+    }else if(that.data.userlike=="健身"){
+      that.setData({
+        proteinnumber:1.5
+      })
+    }else if(that.data.userlike=="省钱"){
+      that.setData({
+        pricenumber:13
+      })
+    };
+  
+    
+    db.collection("table").where({
+      tablecho:db.command.gte(1200*that.data.chonumber)&&db.command.lte(1400*that.data.chonumber),
+      tablefat:db.command.gte(25*that.data.fatnumber)&&db.command.lte(40*that.data.fatnumber),
+      tableprotein:db.command.gte(40*that.data.proteinnumber)&&db.command.lte(60*that.data.proteinnumber),
+      tableprice:db.command.lte(that.data.pricenumber)
+    }).get().then(res=>{
+      console.log("获取成功",res);
+      that.setData({
+      randomnumber:Math.floor(Math.random()*(res.data.length-1))
+    })
+      console.log(res.data.length);
+      that.setData({
+      food_name:res.data[that.data.randomnumber].tablename,
+      food_price:res.data[that.data.randomnumber].tableprice,
+      address:res.data[that.data.randomnumber].address,
+      photo_address:"cloud://cloud1-0g6ojs2ja6ce371a.636c-cloud1-0g6ojs2ja6ce371a-1314916374/"+res.data[that.data.randomnumber].tablename+".jpg"
+      })
+    })
+    
 
-  jumpPage(e) {
-    wx.navigateTo({
-      url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
-    });
+  
   },
+  
 
-  onClickDatabase(powerList) {
-    wx.showLoading({
-      title: '',
-    });
-    wx.cloud.callFunction({
-      name: 'quickstartFunctions',
-      config: {
-        env: this.data.selectedEnv.envId
-      },
-      data: {
-        type: 'createCollection'
-      }
-    }).then((resp) => {
-      if (resp.result.success) {
-        this.setData({
-          haveCreateCollection: true
-        });
-      }
-      this.setData({
-        powerList
-      });
-      wx.hideLoading();
-    }).catch((e) => {
-      console.log(e);
-      this.setData({
-        showUploadTip: true
-      });
-      wx.hideLoading();
-    });
-  }
-});
+})
